@@ -1,0 +1,15 @@
+{
+	"authors": [
+		"Ki Rill"
+	],
+	"copyright": "Copyright © 2019, Ki Rill",
+	"dependencies": {
+		"raylib-d": "~>2.5.0"
+	},
+	"description": "A minimal D application.",
+	"libs": [
+		"raylib"
+	],
+	"license": "proprietary",
+	"name": "arkanoid"
+}
