@@ -1,4 +1,4 @@
-# Dlang-Game-Dev
+# Dlang Game Dev
 
 Let's make games in D programming language using Raylib, Dgame, SDL2 graphics libraries! Here you can find source code for 2D games I have written in Dlang using one of the libraries mentioned above.
 
