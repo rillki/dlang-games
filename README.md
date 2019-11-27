@@ -8,6 +8,6 @@ The main purpose of this project is to inspire more people to use D programming 
 
 Use dub package manager to compile these games. It will include all the necessary packages/files for you.
 
-I’d love to hear your feedback and suggestions. If you have any questions regarding this project, contact me: rillk500@gmail.com.
+I’d love to hear your feedback and suggestions. If you have any questions regarding this project, send me an email: rillk500@gmail.com.
 
 Enjoy!
