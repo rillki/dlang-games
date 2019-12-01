@@ -2,7 +2,7 @@
 	"authors": [
 		"rillk500"
 	],
-	"copyright": "rillk500",
+	"copyright": "free",
 	"dependencies": {
 		"raylib-d": "~>2.5.0"
 	},
@@ -10,6 +10,6 @@
 	"libs": [
 		"raylib"
 	],
-	"license": "proprietary",
+	"license": "no license",
 	"name": "tictactoe"
 }
