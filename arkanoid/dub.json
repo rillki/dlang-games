@@ -1,8 +1,8 @@
 {
 	"authors": [
-		"Ki Rill"
+		"rillk500"
 	],
-	"copyright": "Copyright © 2019, Ki Rill",
+	"copyright": "free",
 	"dependencies": {
 		"raylib-d": "~>2.5.0"
 	},
@@ -10,6 +10,6 @@
 	"libs": [
 		"raylib"
 	],
-	"license": "proprietary",
+	"license": "no license",
 	"name": "arkanoid"
 }
