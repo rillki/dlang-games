@@ -52,9 +52,9 @@ void main() {
 	int fallingSpeed = 9;
 
 	immutable float gravity = 1.5;	//	gravity
-	immutable float dy = 15;		//	constant jumping velocity
-	float jump = dy;				//	delta jumping velocity
-	float da = 0;					//	acceleration
+	immutable float dy = 15;	//	constant jumping velocity
+	float jump = dy;		//	delta jumping velocity
+	float da = 0;			//	acceleration
 
 	Rectangle rmuteScreen = Rectangle(0, 0, WIDTH, HEIGHT);
 	bool muteScreen = false;
@@ -75,10 +75,10 @@ void main() {
 				doodlePos.x += movingSpeed;
 
 				// a smooth transition
-				if(doodlePos.x > WIDTH) {					//	if the player jumps to the right border of the window, move the player to the left border
+				if(doodlePos.x > WIDTH) {			//	if the player jumps to the right border of the window, move the player to the left border
 					doodlePos.x = -tdoodlejump.width;
 				}
-			} else if(IsKeyDown(KeyboardKey.KEY_SPACE)) {	//	additional acceleration (optional, could be removed)
+			} else if(IsKeyDown(KeyboardKey.KEY_SPACE)) {		//	additional acceleration (optional, could be removed)
 				jump += gravity/2;
 				da += 0.1;
 			}
