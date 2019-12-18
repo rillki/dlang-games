@@ -24,7 +24,7 @@ struct Obstacle {
 	bool growFromEarth;
 	int height = 0;
 	int blockSize = 0;
-	int[6] body = 0; //	body of an obstacle, each entry with 1 is a block, 0 is nothing
+	int[6] body = 0;	// body of an obstacle, each entry with 1 is a block, 0 is nothing
 
 	int windowWidth = 0;
 	int windowHeight = 0;
@@ -40,7 +40,7 @@ struct Obstacle {
 		type = uniform(ObstacleType.GREEN, ObstacleType.NONE);
 
 		tex = LoadTexture("res/tiles.png");
-		switch(type) { //	cutting the required texture type from a texture tileset
+		switch(type) {	// cutting the required texture type from a texture tileset
 			case ObstacleType.GREEN:
 				srect = Rectangle(0, 0, blockSize, blockSize);
 				break;
@@ -134,7 +134,7 @@ void main() {
 	float gravity = 6;
 	float jumpVelocity = 25;
 	float velocity = 5;
-	float da = 0.45; 			//	gravity acceleration
+	float da = 0.45; 		//	gravity acceleration
 	float dv = jumpVelocity; 	//	delta velocity of player
 	float dg = gravity; 		//	delta velocity of gravity
 
