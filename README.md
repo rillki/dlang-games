@@ -6,10 +6,7 @@ The main purpose of this project is to inspire more people to use D programming 
 - Raylib
 - SDL2
 
-Use dub package manager to compile these games. It will include all the necessary packages/files for you.
-
-#### Dlang game dev tutorial
-You can follow my tutorial: https://github.com/rillk500/Learn-Dlang-game-dev
+Use dub package manager to compile these games. It will include all the necessary packages/files for you. You can also follow my Dlang Game Dev tutorial at https://github.com/rillk500/Learn-Dlang-game-dev.
 
 I’d love to hear your feedback and suggestions. If you have any questions regarding this project, send me an email: rillk500@gmail.com.
 
