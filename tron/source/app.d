@@ -5,7 +5,7 @@ import std.random: uniform;
 import raylib;
 
 void main() {
-	immutable int WIDTH = 640;
+    immutable int WIDTH = 640;
     immutable int HEIGHT = 480;
     immutable int BLOCK_SIZE = 16;
 
