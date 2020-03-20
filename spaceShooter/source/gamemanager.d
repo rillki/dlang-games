@@ -1,9 +1,9 @@
 module gamemanager;
 
 import raylib;
-import std.string: toStringz;	// converting a Dlang string to a C string
-import std.conv: to;			// converting data types to!int(some_Variable)
-
+import std.string: toStringz;			// converting a Dlang string to a C string
+import std.conv: to;				// converting data types to!int(some_Variable)
+	
 import data;
 import play;					// gameplay manager
 import texturemanager;
@@ -15,12 +15,12 @@ class gameManager {
 	GameState gstate = GameState.MENU;
 	StarshipType shipType = StarshipType.PALADIN;
 
-	Texture2D tbackground;			// window background image
+	Texture2D tbackground;			// main menu background image
 
-	Vector2 mousePos;				// for tracking mouse position
-	Vector2 textPos;				// main menu text position ("play", "exit")
+	Vector2 mousePos;			// for tracking mouse position
+	Vector2 textPos;			// main menu text position ("play", "exit")
 	Vector2 circleSelectorPos;		// ship selector
-	Sprite ships;					// enemy ship
+	Sprite ships;				// enemy ship
 
 	Rectangle rmenuSelector;		// main menu option selector ("play", "exit")
 
@@ -31,7 +31,7 @@ class gameManager {
 		SetMouseScale(1.0, 1.0);
 
 		TextureManager.getInstance().add("res/background.png", "background");		// adding a texture
-		tbackground = TextureManager.getInstance().get("background");				// retrieving the texture
+		tbackground = TextureManager.getInstance().get("background");			// retrieving a texture
 		tbackground.width = WIDTH;
 		tbackground.height = HEIGHT;
 
@@ -62,32 +62,32 @@ class gameManager {
 				render();
 			} else if(gstate == GameState.PLAY) {
 				Play play = new Play(gstate, shipType);		// if PLAY, create a Play object, destroy when over =>
-				gstate = execute(play);						// it is useful for restarting the game
+				gstate = execute(play);	
 				object.destroy(play);
 			}
 		}
 	}
 
 	private void processEvents() {
-		if(WindowShouldClose()) {							// close the window event
+		if(WindowShouldClose()) {					// close the window event
 			gstate = GameState.EXIT;
-		} else if(IsKeyPressed(KeyboardKey.KEY_SPACE)) {	// if space was pressed, init gameplay
+		} else if(IsKeyPressed(KeyboardKey.KEY_SPACE)) {		// if space was pressed, init gameplay
 			gstate = GameState.PLAY;
-		} else if(IsKeyPressed(KeyboardKey.KEY_ENTER)) {	// if space was pressed, init gameplay, otherwise quit
+		} else if(IsKeyPressed(KeyboardKey.KEY_ENTER)) {		// if space was pressed, init gameplay, otherwise quit
 			if(rmenuSelector.y == textPos.y) {
 				gstate = GameState.PLAY;
 			} else {
 				gstate = GameState.EXIT;
 			}
-		} else if(IsKeyPressed(KeyboardKey.KEY_UP)) {		// move menu selector up
+		} else if(IsKeyPressed(KeyboardKey.KEY_UP)) {			// move menu selector up
 			rmenuSelector.y = textPos.y;
-		} else if(IsKeyPressed(KeyboardKey.KEY_DOWN)) {		// move menu selector down
+		} else if(IsKeyPressed(KeyboardKey.KEY_DOWN)) {			// move menu selector down
 			rmenuSelector.y = textPos.y*2.3 - (rmenuSelector.height - 81);
 		} else if(IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON) || IsMouseButtonPressed(MouseButton.MOUSE_RIGHT_BUTTON)) {
 			if(mousePos.y > textPos.y && mousePos.y < textPos.y + 81) {
-				gstate = GameState.PLAY;					// if main menu -> "play" was pressed
+				gstate = GameState.PLAY;			// if main menu -> "play" was pressed
 			} else if(mousePos.y > textPos.y*2.3 && mousePos.y < textPos.y*2.3 + 81) {
-				gstate = GameState.EXIT;					// if main menu -> "exit" was pressed
+				gstate = GameState.EXIT;			// if main menu -> "exit" was pressed
 			}
 		}
 	}
@@ -116,7 +116,7 @@ class gameManager {
 		BeginDrawing();
 		ClearBackground(WHITE);
 		DrawTexture(tbackground, 0, 0, WHITE); 	// background
-		DrawFPS(10, 10);						// drawing fps
+		DrawFPS(10, 10);			// drawing fps
 
 		// drawing ship selector
 		DrawCircleV(circleSelectorPos, radius, Color(180, 180, 180, 164));
