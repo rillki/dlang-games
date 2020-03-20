@@ -7,7 +7,7 @@ import data;
 import texturemanager;
 
 class EnemySystem {
-	private Enemy[] e;			// enemies
+	private Enemy[] e;		// enemies
 
 	private double time = 0;	// for adding new enemies every few seconds
 
@@ -166,7 +166,7 @@ class Enemy: Entity {
 		sprite.pos = pos;
 	}
 
-	public void forceBulletRemove(int i) {}								 	// enforced by the Entity interface
+	public void forceBulletRemove(int i) {}					// enforced by the Entity interface
 
 	public void setEntityState(EntityState state) {
 		sprite.estate = state;
@@ -180,11 +180,11 @@ class Enemy: Entity {
 		return sprite.pos;
 	}
 
-	public bool shieldOn() { return false; }								// enforced by the Entity interface
+	public bool shieldOn() { return false; }				// enforced by the Entity interface
 
-	public Rectangle getEntity(int i) { return Rectangle(0, 0, 0, 0); }		// enforced by the Entity interface
+	public Rectangle getEntity(int i) { return Rectangle(0, 0, 0, 0); }	// enforced by the Entity interface
 
-	public ulong getEntityLength() { return 0; }							// enforced by the Entity interface
+	public ulong getEntityLength() { return 0; }				// enforced by the Entity interface
 
 	private void move(float x, float y, EntityState state) {
 		sprite.pos.x += x;
