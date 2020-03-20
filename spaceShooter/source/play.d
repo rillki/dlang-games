@@ -25,7 +25,7 @@ class Play {
     StarshipType shipType;
     EnemySystem enemySystem;
 
-	Sprite shp;
+    Sprite shp;
 
     Texture2D tbackground;
     Texture2D thp;
