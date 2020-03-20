@@ -35,17 +35,17 @@ struct Bullet {
 	void move() {
 		// animating the bullet
 		time += GetFrameTime();
-    	if(time > 0.15) {
-    		currentFrame++;
+    		if(time > 0.15) {
+    			currentFrame++;
 			if(currentFrame > srect.length-1) {
 				currentFrame = 0;
 			}
 
-    		time = 0;
-    	}
+    			time = 0;
+    		}
 
 		// moving bullet accros the screen
-    	pos.y -= speed;
+    		pos.y -= speed;
 	}
 
 	bool ShouldBeRemoved() {
