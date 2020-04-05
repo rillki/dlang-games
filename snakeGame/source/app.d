@@ -1,12 +1,12 @@
 import raylib;
 
-import std.string: toStringz;				// for converting D string into C string
-import std.random: uniform;					// random number generator
+import std.string: toStringz;			// for converting D string into C string
+import std.random: uniform;			// random number generator
 
-immutable int windowSize = 320;				// window width and height
-immutable int blockSize = 16;				// entity size
+immutable int windowSize = 320;			// window width and height
+immutable int blockSize = 16;			// entity size
 
-enum GameStates { play, exit }				// game states
+enum GameStates { play, exit }			// game states
 enum Direction { up, down, left, right }	// direction
 
 // Fruit struct -> generates a fruit at random location
@@ -44,7 +44,7 @@ struct Snake {
 	Rectangle[100] rect = Rectangle(-blockSize, -blockSize, blockSize, blockSize);	// the snake: array of maximum snake length
 	Direction dir = Direction.up;		// direction
 
-	int length = 5;						// snake length (max is windowSize^2 = 400 entities (16x16 size))
+	int length = 5;				// snake length (max is windowSize^2 = 400 entities (16x16 size))
 
 	// init
 	this(int posX, int posY) {
@@ -89,7 +89,7 @@ struct Snake {
 		}
 	}
 
-    // grow tail
+    	// grow tail
 	void grow() {
 		length++;
 	}
@@ -105,18 +105,18 @@ struct Game {
 	bool gameOver = false;
 	double time = 0;
 
-	// initializing the game
+    // initializing the game
     this(string title) {
         InitWindow(windowSize, windowSize, title.toStringz);
         SetTargetFPS(30);
     }
 
-	// freing resources in the end of the game
+    // freing resources in the end of the game
     ~this() {
         CloseWindow();
     }
 
-	// processing game events
+    // processing game events
     void processEvents() {
         if(WindowShouldClose()) {
             gstate = GameStates.exit;
@@ -132,34 +132,34 @@ struct Game {
     }
 
 	// updating game logic
-	void update() {
-		if(!gameOver) {
-			// update the snake
+    void update() {
+	if(!gameOver) {
+		// update the snake
 	        time += GetFrameTime();
-			if(time > 0.12) {
-				time = 0;
+		if(time > 0.12) {
+			time = 0;
 
-				// check whether the head of the snake has bumbed into its tail
-				for(int i = 1; i < snake.length; i++) {
-					if(snake.rect[0].x == snake.rect[i].x && snake.rect[0].y == snake.rect[i].y) {
-						gameOver = true;
-					}
+			// check whether the head of the snake has bumbed into its tail
+			for(int i = 1; i < snake.length; i++) {
+				if(snake.rect[0].x == snake.rect[i].x && snake.rect[0].y == snake.rect[i].y) {
+					gameOver = true;
 				}
-
-				// check if the snake has eaten the fruit
-				if(snake.rect[0].x == fruit.rect.x && snake.rect[0].y == fruit.rect.y){
-					fruit.eaten = true;
-
-					snake.grow();
-				}
-
-				// update the fruit
-				fruit.update();
-
-				// update the snake
-				snake.update();
 			}
+
+			// check if the snake has eaten the fruit
+			if(snake.rect[0].x == fruit.rect.x && snake.rect[0].y == fruit.rect.y){
+				fruit.eaten = true;
+
+				snake.grow();
+			}
+
+			// update the fruit
+			fruit.update();
+			
+			// update the snake
+			snake.update();
 		}
+	}
     }
 
 	// drawing
