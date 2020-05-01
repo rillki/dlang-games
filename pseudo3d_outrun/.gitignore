@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/pseudo3d_outrun
+pseudo3d_outrun.so
+pseudo3d_outrun.dylib
+pseudo3d_outrun.dll
+pseudo3d_outrun.a
+pseudo3d_outrun.lib
+pseudo3d_outrun-test-*
+*.exe
+*.o
+*.obj
+*.lst
