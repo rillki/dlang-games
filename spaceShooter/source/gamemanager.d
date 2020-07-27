@@ -30,6 +30,7 @@ class gameManager {
 		SetTargetFPS(60);
 		SetMouseScale(1.0, 1.0);
 
+		// initialize resource manager and load all texture from a file
 		ResManager!Texture2D.getInstance.initAndLoadFromFile("loadTextures.txt", &loadTexture, &unloadTexture);
 
 		tbackground = ResManager!Texture2D.getInstance.get("background");			// retrieving a texture
