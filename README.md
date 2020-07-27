@@ -2,9 +2,11 @@
 
 The main purpose of this project is to inspire more people to use D programming language for their Game Dev projects, and to help newcomers and beginner programmers learn D language in a more engaging manner.
 
+<center><img src="img/img.png"></center>
+
 #### The following libraries are used:
-- Raylib
-- SDL2
+- Raylib (raylib-d)
+- SDL2 (bindbc-sdl)
 
 Use dub package manager to compile these games. It will include all the necessary packages/files for you. You can also follow my Dlang Game Dev tutorial at https://github.com/rillk500/Learn-Dlang-game-dev.
 
