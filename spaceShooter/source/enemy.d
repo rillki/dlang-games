@@ -4,7 +4,7 @@ import raylib;
 import std.random: uniform;
 
 import data;
-import texturemanager;
+import resmanager;
 
 class EnemySystem {
 	private Enemy[] e;		// enemies
@@ -12,16 +12,13 @@ class EnemySystem {
 	private double time = 0;	// for adding new enemies every few seconds
 
 	this() {
-		TextureManager.getInstance().add("res/enemy1.png", "enemy1");
-		TextureManager.getInstance().add("res/enemy2.png", "enemy2");
-
 		// adding different enemies
 		for(int i = 0; i < 9; i++) {
 			int rand = uniform(0, 4);
 			if(rand) {
-				e ~= new Enemy(TextureManager.getInstance().get("enemy1"), 0.81, 48);
+				e ~= new Enemy(ResManager!Texture2D.getInstance.get("enemy1"), 0.81, 48);
 			} else {
-				e ~= new Enemy(TextureManager.getInstance().get("enemy2"), 1.91, 32);
+				e ~= new Enemy(ResManager!Texture2D.getInstance.get("enemy2"), 1.91, 32);
 			}
 			e[i].setPos(Vector2(uniform(0, WIDTH), -uniform(0, HEIGHT)));
 		}
@@ -49,9 +46,9 @@ class EnemySystem {
 		if(time > 4.5 && e.length < 120) {
 			int rand = uniform(0, 4);
 			if(rand) {
-				e ~= new Enemy(TextureManager.getInstance().get("enemy1"), 0.81, 48);
+				e ~= new Enemy(ResManager!Texture2D.getInstance.get("enemy1"), 0.81, 48);
 			} else {
-				e ~= new Enemy(TextureManager.getInstance().get("enemy2"), 1.91, 32);
+				e ~= new Enemy(ResManager!Texture2D.getInstance.get("enemy2"), 1.91, 32);
 			}
 			e[e.length-1].setPos(Vector2(uniform(0, WIDTH), -uniform(0, HEIGHT)));
 
@@ -98,13 +95,10 @@ class Enemy: Entity {
 		sprite.srect ~= Rectangle(sprite.actualWidth*2, 0, sprite.actualWidth, sprite.actualHeight);
 		e_speed = speed;
 
-		TextureManager.getInstance().add("res/exp32.png", "exp32");
-		TextureManager.getInstance().add("res/exp48.png", "exp48");
-
 		if(size == 32) {
-			sexplosion.tex = TextureManager.getInstance().get("exp32");
+			sexplosion.tex = ResManager!Texture2D.getInstance.get("exp32");
 		} else {
-			sexplosion.tex = TextureManager.getInstance().get("exp48");
+			sexplosion.tex = ResManager!Texture2D.getInstance.get("exp48");
 		}
 		sexplosion.actualWidth = sexplosion.actualHeight = size;
 		for(int i = 0; i < 9; i++) {

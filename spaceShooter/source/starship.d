@@ -5,7 +5,7 @@ import std.algorithm: remove;
 import std.conv: to;
 
 import data;
-import texturemanager;
+import resmanager;
 
 struct Bullet {
 	Vector2 pos;			// bullet position
@@ -75,10 +75,7 @@ class PaladinShip: Entity {
 	private Texture2D tbullet;
 
 	this() {
-		TextureManager.getInstance().add("res/paladin.png", "paladin");
-		TextureManager.getInstance().add("res/paladin_.png", "paladin_");
-
-		sprite.tex = TextureManager.getInstance().get("paladin");
+		sprite.tex = ResManager!Texture2D.getInstance.get("paladin");
 		sprite.actualWidth = sprite.actualHeight = 64;
 		sprite.srect ~= Rectangle(0, 0, sprite.actualWidth, sprite.actualHeight);
 		sprite.srect ~= Rectangle(sprite.actualWidth, 0, sprite.actualWidth, sprite.actualHeight);
@@ -86,7 +83,7 @@ class PaladinShip: Entity {
 		sprite.srect ~= Rectangle(sprite.actualWidth*3, 0, sprite.actualWidth, sprite.actualHeight);
 		ship_speed = 3.6;
 
-		tbullet = TextureManager.getInstance().get("paladin_");
+		tbullet = ResManager!Texture2D.getInstance.get("paladin_");
 	}
 
 	~this() {}
@@ -209,10 +206,7 @@ class SpecterShip: Entity {
 	private Texture2D tbullet;
 
 	this() {
-		TextureManager.getInstance().add("res/specter.png", "specter");
-		TextureManager.getInstance().add("res/specter_.png", "specter_");
-
-		sprite.tex = TextureManager.getInstance().get("specter");
+		sprite.tex = ResManager!Texture2D.getInstance.get("specter");
 		sprite.actualWidth = sprite.actualHeight = 64;
 		sprite.srect ~= Rectangle(0, 0, sprite.actualWidth, sprite.actualHeight);
 		sprite.srect ~= Rectangle(sprite.actualWidth, 0, sprite.actualWidth, sprite.actualHeight);
@@ -220,7 +214,7 @@ class SpecterShip: Entity {
 		sprite.srect ~= Rectangle(sprite.actualWidth*3, 0, sprite.actualWidth, sprite.actualHeight);
 		ship_speed = 6;
 
-		tbullet = TextureManager.getInstance().get("specter_");
+		tbullet = ResManager!Texture2D.getInstance.get("specter_");
 	}
 
 	~this() {}
@@ -328,10 +322,7 @@ class StarhammerShip: Entity {
 	private bool shield_on = false;
 
 	this() {
-		TextureManager.getInstance().add("res/starhammer.png", "starhammer");
-		TextureManager.getInstance().add("res/starhammer_.png", "starhammer_");
-
-		sprite.tex = TextureManager.getInstance().get("starhammer");
+		sprite.tex = ResManager!Texture2D.getInstance.get("starhammer");
 		sprite.actualWidth = 128;
 		sprite.actualHeight = 64;
 		sprite.srect ~= Rectangle(0, 0, sprite.actualWidth, sprite.actualHeight);
@@ -341,7 +332,7 @@ class StarhammerShip: Entity {
 		sprite.srect ~= Rectangle(sprite.actualWidth*4, 0, sprite.actualWidth, sprite.actualHeight);
 		ship_speed = 2.1;
 
-		tbullet = TextureManager.getInstance().get("starhammer_");
+		tbullet = ResManager!Texture2D.getInstance.get("starhammer_");
 	}
 
 	~this() {}

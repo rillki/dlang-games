@@ -8,7 +8,7 @@ import std.string: toStringz;
 import data;
 import starship;
 import enemy;
-import texturemanager;
+import resmanager;
 
 GameState execute(Play play) {
 	while(play.gstate == GameState.PLAY) {
@@ -53,39 +53,32 @@ class Play {
 		int num = uniform(0, 6);
 		switch(num) {
 			case 0:
-				TextureManager.getInstance().add("res/play1.png", "play1");
-				tbackground = TextureManager.getInstance().get("play1");
+				tbackground = ResManager!Texture2D.getInstance.get("play1");
 				break;
 			case 1:
-				TextureManager.getInstance().add("res/play2.png", "play2");
-				tbackground = TextureManager.getInstance().get("play2");
+				tbackground = ResManager!Texture2D.getInstance.get("play2");
 				break;
 			case 2:
-				TextureManager.getInstance().add("res/play3.png", "play3");
-				tbackground = TextureManager.getInstance().get("play3");
+				tbackground = ResManager!Texture2D.getInstance.get("play3");
 				break;
 			case 3:
-				TextureManager.getInstance().add("res/play4.png", "play4");
-				tbackground = TextureManager.getInstance().get("play4");
+				tbackground = ResManager!Texture2D.getInstance.get("play4");
 				break;
 			case 4:
-				TextureManager.getInstance().add("res/play5.png", "play5");
-				tbackground = TextureManager.getInstance().get("play5");
+				tbackground = ResManager!Texture2D.getInstance.get("play5");
 				break;
 			default:
-				TextureManager.getInstance().add("res/play6.png", "play6");
-				tbackground = TextureManager.getInstance().get("play6");
+				tbackground = ResManager!Texture2D.getInstance.get("play6");
 				break;
 		}
 		tbackground.width = WIDTH;
 		tbackground.height = HEIGHT;
 
-		TextureManager.getInstance().add("res/hp.png", "hp");
-		shp.tex = TextureManager.getInstance().get("hp");
+		shp.tex = ResManager!Texture2D.getInstance.get("hp");
 		shp.pos = Vector2(uniform(0, WIDTH-shp.tex.width), -shp.tex.height);
 		shp.estate = EntityState.MOVING;
 
-		thp = TextureManager.getInstance().get("hp");
+		thp = ResManager!Texture2D.getInstance.get("hp");
 
 		if(shipType == StarshipType.PALADIN) {
 			pship = new PaladinShip();

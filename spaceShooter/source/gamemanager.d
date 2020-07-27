@@ -1,12 +1,12 @@
 module gamemanager;
 
 import raylib;
-import std.string: toStringz;			// converting a Dlang string to a C string
+import std.string: toStringz;		// converting a Dlang string to a C string
 import std.conv: to;				// converting data types to!int(some_Variable)
-	
-import data;
-import play;					// gameplay manager
-import texturemanager;
+
+import data;						// common data throughout the game
+import play;						// gameplay manager
+import resmanager;					// resource manager
 
 class gameManager {
 	int radius = 81;
@@ -30,13 +30,13 @@ class gameManager {
 		SetTargetFPS(60);
 		SetMouseScale(1.0, 1.0);
 
-		TextureManager.getInstance().add("res/background.png", "background");		// adding a texture
-		tbackground = TextureManager.getInstance().get("background");			// retrieving a texture
+		ResManager!Texture2D.getInstance.initAndLoadFromFile("loadTextures.txt", &loadTexture, &unloadTexture);
+
+		tbackground = ResManager!Texture2D.getInstance.get("background");			// retrieving a texture
 		tbackground.width = WIDTH;
 		tbackground.height = HEIGHT;
 
-		TextureManager.getInstance().add("res/ships.png", "ships");
-		ships.tex = TextureManager.getInstance().get("ships");
+		ships.tex = ResManager!Texture2D.getInstance.get("ships");
 		ships.actualWidth = ships.actualHeight = 128;
 		ships.srect ~= Rectangle(0, 0, ships.actualWidth, ships.actualHeight);
 		ships.srect ~= Rectangle(ships.actualWidth, 0, ships.actualWidth, ships.actualHeight);
@@ -62,7 +62,7 @@ class gameManager {
 				render();
 			} else if(gstate == GameState.PLAY) {
 				Play play = new Play(gstate, shipType);		// if PLAY, create a Play object, destroy when over =>
-				gstate = execute(play);	
+				gstate = execute(play);
 				object.destroy(play);
 			}
 		}

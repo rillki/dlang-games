@@ -10,6 +10,14 @@ enum EntityState { STATIONARY, MOVING, SHOOTING, EXPLODING, DESTROYED }
 immutable int WIDTH = 1080;
 immutable int HEIGHT = 640;
 
+// getting cwd path
+const string mainPath;
+static this() {
+	import std.file: getcwd;
+
+	mainPath = getcwd() ~ '/';
+}
+
 // common functions
 interface Entity {
 	public void processEvents();					// processing events
@@ -49,4 +57,32 @@ bool checkMouseCollision(float mouseX, float mouseY, float x, float y, int w, in
 	}
 
 	return false;
+}
+
+/* ******* additional functionality ****** */
+
+// assert like function, that formats output into a box
+bool test(const bool expression, const string message) {
+	import std.stdio: print = write, warn = writeln;
+
+	if(!expression) {
+		immutable length = message.length;
+
+		warn;
+
+		for(int i = 0; i < length+4; i++) { print("*"); }
+		warn("\n* ", message, " *");
+		for(int i = 0; i < length+4; i++) { print("*"); }
+
+		warn("\n");
+
+		return expression;
+	}
+
+	return expression;
+}
+
+// combine mainPath of cwd with local filepath
+string getFullPath(const string filepath) {
+	return (mainPath ~ filepath);
 }
