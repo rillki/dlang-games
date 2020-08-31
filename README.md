@@ -6,7 +6,6 @@ The main purpose of this project is to inspire more people to use D programming 
 
 #### The following libraries are used:
 - Raylib (raylib-d)
-- SDL2 (bindbc-sdl)
 
 #### Game resources (music, textures, images, etc...)
 All of the game resources are either made by myself or downloaded from the internet under 'copyright free' lisence. All of the credits go to their respective creators. 
