@@ -6,7 +6,7 @@ The main purpose of this project is to inspire more people to use D programming 
 
 ---
 
-### Dependencies:
+### Dependencies
 - Raylib (raylib-d)
 
 ### Game resources (music, textures, images, etc...)
