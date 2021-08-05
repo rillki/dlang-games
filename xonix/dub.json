@@ -4,12 +4,24 @@
 	],
 	"copyright": "free",
 	"dependencies": {
-		"raylib-d": "~>2.5.0"
-	},
-	"description": "A minimal D application.",
-	"libs": [
-		"raylib"
-	],
+        "raylib-d": "~>3.0.4"
+    },
+    "description": "2D game",
+    "lflags": [
+        "-framework",
+        "CoreVideo",
+        "-framework",
+        "IOKit",
+        "-framework",
+        "Cocoa",
+        "-framework",
+        "GLUT",
+        "-framework",
+        "OpenGL"
+    ],
+    "libs": [
+        "raylib"
+    ],
 	"license": "no license",
 	"name": "xonix"
 }

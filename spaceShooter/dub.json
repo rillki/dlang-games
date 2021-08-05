@@ -7,7 +7,14 @@
 		"raylib-d": "~>2.5.0"
 	},
 	"description": "A minimal D application.",
-	"libs": [ "raylib" ],
+	"libs": ["raylib"],
+	"lflags": [
+		"-framework", "CoreVideo",
+		"-framework", "IOKit",
+		"-framework", "Cocoa",
+		"-framework", "GLUT",
+		"-framework", "OpenGL",
+	],
 	"license": "no license",
 	"name": "spaceshooter"
 }
