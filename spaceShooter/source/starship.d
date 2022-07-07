@@ -60,7 +60,7 @@ struct Bullet {
 	void draw(Texture2D tex) {
 		move();
 
-		DrawTextureRec(tex, srect[currentFrame], pos, WHITE);
+		DrawTextureRec(tex, srect[currentFrame], pos, Colors.WHITE);
 	}
 }
 
@@ -149,7 +149,7 @@ class PaladinShip: Entity {
     		bullet[i].draw(tbullet);
     	}
 
-		DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, WHITE);
+		DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, Colors.WHITE);
 	}
 
 	public int getActualSpriteWidth() {
@@ -267,7 +267,7 @@ class SpecterShip: Entity {
     		bullet[i].draw(tbullet);
     	}
 
-		DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, WHITE);
+		DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, Colors.WHITE);
 	}
 
 	public int getActualSpriteWidth() {
@@ -394,7 +394,7 @@ class StarhammerShip: Entity {
 	}
 
 	public void render() {
-		DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, WHITE);
+		DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, Colors.WHITE);
 
 		for(int i = 0; i < bullet.length; i++) {
     		bullet[i].draw(tbullet);

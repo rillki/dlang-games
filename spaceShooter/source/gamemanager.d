@@ -115,26 +115,26 @@ class gameManager {
 
 	private void render() {
 		BeginDrawing();
-		ClearBackground(WHITE);
-		DrawTexture(tbackground, 0, 0, WHITE); 	// background
+		ClearBackground(Colors.WHITE);
+		DrawTexture(tbackground, 0, 0, Colors.WHITE); 	// background
 		DrawFPS(10, 10);			// drawing fps
 
 		// drawing ship selector
 		DrawCircleV(circleSelectorPos, radius, Color(180, 180, 180, 164));
 		for(int i = 0; i < ships.srect.length; i++) {
 			// drawing ships
-			DrawTextureRec(ships.tex, ships.srect[i], Vector2(ships.pos.x + i*distance, ships.pos.y), WHITE);
+			DrawTextureRec(ships.tex, ships.srect[i], Vector2(ships.pos.x + i*distance, ships.pos.y), Colors.WHITE);
 		}
 
 		// drawing menu selector
 		DrawRectangleRec(rmenuSelector, Color(0, 0, 0, 164));
-		DrawText("Play", textPos.x.to!int-90, textPos.y.to!int, 81, WHITE);
-		DrawText("Exit", textPos.x.to!int-80, (2.3*textPos.y).to!int, 81, WHITE);
+		DrawText("Play", textPos.x.to!int-90, textPos.y.to!int, 81, Colors.WHITE);
+		DrawText("Exit", textPos.x.to!int-80, (2.3*textPos.y).to!int, 81, Colors.WHITE);
 
 		// drawing ships' names underneath the ship texture
-		DrawText("PALADIN", ships.pos.x.to!int, (ships.pos.y + ships.actualHeight*1.2).to!int, 30, WHITE);
-		DrawText("SPRECTER", (ships.pos.x + distance).to!int - 20, (ships.pos.y + ships.actualHeight*1.2).to!int, 30, WHITE);
-		DrawText("STARHAMMER", (ships.pos.x + distance*2).to!int - 45, (ships.pos.y + ships.actualHeight*1.2).to!int, 30, WHITE);
+		DrawText("PALADIN", ships.pos.x.to!int, (ships.pos.y + ships.actualHeight*1.2).to!int, 30, Colors.WHITE);
+		DrawText("SPRECTER", (ships.pos.x + distance).to!int - 20, (ships.pos.y + ships.actualHeight*1.2).to!int, 30, Colors.WHITE);
+		DrawText("STARHAMMER", (ships.pos.x + distance*2).to!int - 45, (ships.pos.y + ships.actualHeight*1.2).to!int, 30, Colors.WHITE);
 
 		EndDrawing();
 	}

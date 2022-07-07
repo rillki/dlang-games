@@ -103,16 +103,16 @@ void main() {
 
         // draw
         BeginDrawing();
-        ClearBackground(WHITE);
+        ClearBackground(Colors.WHITE);
 
         for(int i = 0; i < grid.length; i++) {
             for(int j = 0; j < grid[0].length; j++) {
                 if(grid[i][j] == 1) {
                     Vector2 pos = Vector2(j*BLOCK_SIZE, i*BLOCK_SIZE);
-                    DrawTextureRec(tsprite, srect[player1], pos, WHITE);
+                    DrawTextureRec(tsprite, srect[player1], pos, Colors.WHITE);
                 } else if(grid[i][j] == 2) {
                     Vector2 pos = Vector2(j*BLOCK_SIZE, i*BLOCK_SIZE);
-                    DrawTextureRec(tsprite, srect[player2], pos, WHITE);
+                    DrawTextureRec(tsprite, srect[player2], pos, Colors.WHITE);
                 }
             }
         }

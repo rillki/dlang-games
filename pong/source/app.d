@@ -109,12 +109,12 @@ void main() {
 		BeginDrawing();
 		ClearBackground(Color( 100, 228, 48, 255 ));
 
-		DrawRectangleRec(playerPaddle, WHITE);
-		DrawRectangleRec(opponentPaddle, WHITE);
-		DrawCircleV(ball, ballRadius, WHITE);
+		DrawRectangleRec(playerPaddle, Colors.WHITE);
+		DrawRectangleRec(opponentPaddle, Colors.WHITE);
+		DrawCircleV(ball, ballRadius, Colors.WHITE);
 
-		DrawText(toStringz(opponentScore.to!string), WIDTH/3, 10, 30, WHITE);
-		DrawText(toStringz(playerScore.to!string), WIDTH*2/3, 10, 30, WHITE);
+		DrawText(toStringz(opponentScore.to!string), WIDTH/3, 10, 30, Colors.WHITE);
+		DrawText(toStringz(playerScore.to!string), WIDTH*2/3, 10, 30, Colors.WHITE);
 
 		EndDrawing();
 	}

@@ -85,14 +85,14 @@ void main() {
 		for(int i = 0; i < sprite.length; i++) {
 			for(int j = 0; j < sprite[i].length; j++) {
 				if(sprite[i][j].occupied) {
-					DrawTextureRec(tpuzzle, sprite[i][j].srect, sprite[i][j].pos, WHITE);
+					DrawTextureRec(tpuzzle, sprite[i][j].srect, sprite[i][j].pos, Colors.WHITE);
 				}
 			}
 		}
 
 		if(randomize) {
 			DrawRectangleRec(rmuteScreen, Color(0, 0, 0, 180));
-			DrawText("Press Space to play!", (WIDTH/16), HEIGHT/3, 32, WHITE);
+			DrawText("Press Space to play!", (WIDTH/16), HEIGHT/3, 32, Colors.WHITE);
 		}	
 
 		EndDrawing();

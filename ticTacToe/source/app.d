@@ -154,25 +154,25 @@ void main() {
 		ClearBackground(Color(0, 179, 255, 255));
 
 		for(int i = 0; i < startPosV.length; i++) {
-			DrawLineEx(startPosV[i], endPosV[i], 3, WHITE);
-			DrawLineEx(startPosH[i], endPosH[i], 3, WHITE);
+			DrawLineEx(startPosV[i], endPosV[i], 3, Colors.WHITE);
+			DrawLineEx(startPosH[i], endPosH[i], 3, Colors.WHITE);
 		}
 
 		for(int i = 0; i < cells.length; i++) {
 			for(int j = 0; j < cells[i].length; j++) {
 				if(cells[i][j].marked) {
 					DrawTextureRec(cells[i][j].t, cells[i][j].rect, 
-					Vector2(cells[i][j].rect.x, cells[i][j].rect.y), WHITE);
+					Vector2(cells[i][j].rect.x, cells[i][j].rect.y), Colors.WHITE);
 				} 
 			}
 		}
 
 		if(gameOver) {
 			DrawRectangleRec(rectMuteScreen, Color(0, 0, 0, 160));
-			DrawText("You won!", WIDTH/6, HEIGHT*2/5, 100, WHITE);
+			DrawText("You won!", WIDTH/6, HEIGHT*2/5, 100, Colors.WHITE);
 		} else if(draw) {
 			DrawRectangleRec(rectMuteScreen, Color(0, 0, 0, 160));
-			DrawText("It's a draw!", WIDTH/7, HEIGHT*2/5, 80, WHITE);
+			DrawText("It's a draw!", WIDTH/7, HEIGHT*2/5, 80, Colors.WHITE);
 		}
 
 		EndDrawing();

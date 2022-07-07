@@ -113,29 +113,29 @@ void main() {
 
 		//	drawing to screen
 		BeginDrawing();
-		ClearBackground(BLACK);
+		ClearBackground(Colors.BLACK);
 
-		DrawTexture(tbackground, 0, 0, WHITE);
-		DrawRectangleRec(playerPaddle, WHITE);
+		DrawTexture(tbackground, 0, 0, Colors.WHITE);
+		DrawRectangleRec(playerPaddle, Colors.WHITE);
 
 		for(int i = 0; i < arks.length; i++) {
 			for(int j = 0; j < arks[i].length; j++) {
 				if(boolArks[i][j]) {
-					DrawRectangleRec(arks[i][j], WHITE);
+					DrawRectangleRec(arks[i][j], Colors.WHITE);
 				}
 			}
 		}
 
-		DrawCircleV(ball, ballRadius, WHITE);
+		DrawCircleV(ball, ballRadius, Colors.WHITE);
 
 		if(muteScreen && !gameWon) {
 			DrawRectangleRec(rmuteScreen, Color(0, 0, 0, 210));
-			DrawText("Press SPACE to play", WIDTH/10, HEIGHT/3, 48, WHITE);
+			DrawText("Press SPACE to play", WIDTH/10, HEIGHT/3, 48, Colors.WHITE);
 		}
 
 		if(gameWon) {
 			DrawRectangleRec(rmuteScreen, Color(0, 0, 0, 210));
-			DrawText("You Won!", WIDTH/3, HEIGHT/3, 48, WHITE);
+			DrawText("You Won!", WIDTH/3, HEIGHT/3, 48, Colors.WHITE);
 		}
 
 		EndDrawing();

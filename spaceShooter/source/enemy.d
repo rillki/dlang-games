@@ -142,9 +142,9 @@ class Enemy: Entity {
 
 	public void render() {
 		if(sprite.estate != EntityState.EXPLODING && sprite.estate != EntityState.DESTROYED) {
-			DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, WHITE);
+			DrawTextureRec(sprite.tex, sprite.srect[sprite.currentFrame], sprite.pos, Colors.WHITE);
 		} else if(sprite.estate == EntityState.EXPLODING) {
-			DrawTextureRec(sexplosion.tex, sexplosion.srect[sexplosion.currentFrame], sprite.pos, WHITE);
+			DrawTextureRec(sexplosion.tex, sexplosion.srect[sexplosion.currentFrame], sprite.pos, Colors.WHITE);
 		}
 	}
 

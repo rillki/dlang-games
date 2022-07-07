@@ -82,11 +82,11 @@ struct Obstacle {
 		if(growFromEarth) {
 			pos.y = windowHeight-height*blockSize;
 			for(int i = height; i > 0; i--) {
-				DrawTextureRec(tex, srect, Vector2(pos.x, windowHeight-i*blockSize), WHITE);
+				DrawTextureRec(tex, srect, Vector2(pos.x, windowHeight-i*blockSize), Colors.WHITE);
 			}
 		} else {
 			for(int i = 0; i < height; i++) {
-				DrawTextureRec(tex, srect, Vector2(pos.x, i*blockSize), WHITE);
+				DrawTextureRec(tex, srect, Vector2(pos.x, i*blockSize), Colors.WHITE);
 			}
 		}
 	}
@@ -200,26 +200,26 @@ void main() {
 		//	draw to screen
 		BeginDrawing();
 		ClearBackground(Color(0, 179, 255, 255));
-		DrawTexture(tbackground, 0, 0, WHITE);
+		DrawTexture(tbackground, 0, 0, Colors.WHITE);
 
 		for(int i = 0; i < obstacle.length; i++) {
 			if(intersects(Vector2(0, 0), Vector2(WIDTH, HEIGHT), obstacle[i].pos, Vector2(blockSize, blockSize))) { // checking whether an obstacle is within the window bounds
 				obstacle[i].draw();
 			}
 		}
-		DrawTextureRec(sdbird.tex, sdbird.srect[birdFly], sdbird.pos, WHITE);
+		DrawTextureRec(sdbird.tex, sdbird.srect[birdFly], sdbird.pos, Colors.WHITE);
 
 		if(muteScreen) {
 			if(gameOver) {
 				DrawRectangle(rmuteScreen.x.to!int, rmuteScreen.y.to!int, rmuteScreen.width.to!int, rmuteScreen.height.to!int, Color(0, 0, 0, 180));
-				DrawText("You lost!", (WIDTH/3.5).to!int, HEIGHT/3, 90, WHITE);
+				DrawText("You lost!", (WIDTH/3.5).to!int, HEIGHT/3, 90, Colors.WHITE);
 			} else if(gameWon) {
 				DrawRectangle(rmuteScreen.x.to!int, rmuteScreen.y.to!int, rmuteScreen.width.to!int, rmuteScreen.height.to!int, Color(0, 0, 0, 180));
-				DrawText("You won!", WIDTH/4, HEIGHT/3, 90, WHITE);
+				DrawText("You won!", WIDTH/4, HEIGHT/3, 90, Colors.WHITE);
 			} else {
 				DrawRectangle(rmuteScreen.x.to!int, rmuteScreen.y.to!int, rmuteScreen.width.to!int, rmuteScreen.height.to!int, Color(0, 0, 0, 180));
-				DrawText("Press SPACE, W or", WIDTH/24, HEIGHT/4, 64, WHITE);
-				DrawText("UP keys to play!", WIDTH/3, HEIGHT/2, 64, WHITE);
+				DrawText("Press SPACE, W or", WIDTH/24, HEIGHT/4, 64, Colors.WHITE);
+				DrawText("UP keys to play!", WIDTH/3, HEIGHT/2, 64, Colors.WHITE);
 			}
 		}
 

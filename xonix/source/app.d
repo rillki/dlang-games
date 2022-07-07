@@ -171,19 +171,19 @@ void main() {
 		for(int i = 0; i < board.length; i++) {
 			for(int j = 0; j < board[i].length; j++) {
 				if(board[i][j] == 1) {
-					DrawTextureRec(tblocks, srect[0], Vector2(i*BLOCK_SIZE, j*BLOCK_SIZE), WHITE);
+					DrawTextureRec(tblocks, srect[0], Vector2(i*BLOCK_SIZE, j*BLOCK_SIZE), Colors.WHITE);
 				} else if(board[i][j] == 2) {
-					DrawTextureRec(tblocks, srect[1], Vector2(i*BLOCK_SIZE, j*BLOCK_SIZE), WHITE);
+					DrawTextureRec(tblocks, srect[1], Vector2(i*BLOCK_SIZE, j*BLOCK_SIZE), Colors.WHITE);
 				}
 			}
 		}
 
-		DrawCircleV(ballPos, BLOCK_SIZE/2, WHITE);
-		DrawTextureRec(tblocks, srect[1], playerPos, WHITE);
+		DrawCircleV(ballPos, BLOCK_SIZE/2, Colors.WHITE);
+		DrawTextureRec(tblocks, srect[1], playerPos, Colors.WHITE);
 
 		if(gameOver) {
 			DrawRectangle(rmuteScreen.x.to!int, rmuteScreen.y.to!int, rmuteScreen.width.to!int, rmuteScreen.height.to!int, Color(0, 0, 0, 180));
-			DrawText("Game Over!", to!int(WIDTH/4.5), HEIGHT/3, 64, WHITE);
+			DrawText("Game Over!", to!int(WIDTH/4.5), HEIGHT/3, 64, Colors.WHITE);
 		}
 
 		EndDrawing();

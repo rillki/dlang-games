@@ -141,7 +141,7 @@ void main() {
 
 		for(int i = 0; i < hiddenGrid.length; i++) {
 			for(int j = 0; j < hiddenGrid[i].length; j++) {
-				DrawTextureRec(tminesweeper, srect[playerGrid[i][j]], Vector2(i*SPRITE_SIZE, j*SPRITE_SIZE), WHITE);
+				DrawTextureRec(tminesweeper, srect[playerGrid[i][j]], Vector2(i*SPRITE_SIZE, j*SPRITE_SIZE), Colors.WHITE);
 			}
 		}
 

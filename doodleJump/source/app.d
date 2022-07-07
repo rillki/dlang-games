@@ -154,15 +154,15 @@ void main() {
 		//	draw to screen
 		BeginDrawing();
 		ClearBackground(Color(255, 255, 255, 255));
-		DrawTexture(tbackground, 0, 0, WHITE);
+		DrawTexture(tbackground, 0, 0, Colors.WHITE);
 
-		DrawTexture(tdoodlejump, doodlePos.x.to!int, doodlePos.y.to!int, WHITE);
+		DrawTexture(tdoodlejump, doodlePos.x.to!int, doodlePos.y.to!int, Colors.WHITE);
 		for(int i = 0; i < paddlesPos.length; i++) {
 			if(intersects(paddlesPos[i], Vector2(tpaddles.width/2, tpaddles.height), Vector2(0, 0), Vector2(WIDTH, HEIGHT))) {
 				if(i%2 == 0) {
-					DrawTextureRec(tpaddles, srect[0], paddlesPos[i], WHITE);
+					DrawTextureRec(tpaddles, srect[0], paddlesPos[i], Colors.WHITE);
 				} else {
-					DrawTextureRec(tpaddles, srect[1], paddlesPos[i], WHITE);
+					DrawTextureRec(tpaddles, srect[1], paddlesPos[i], Colors.WHITE);
 				}
 			}
 		}
@@ -173,9 +173,9 @@ void main() {
 				Color(0, 0, 0, 185));
 
 			if(gameOver) {
-				DrawText("You Lost!", WIDTH/9, HEIGHT/3, 81, WHITE);
+				DrawText("You Lost!", WIDTH/9, HEIGHT/3, 81, Colors.WHITE);
 			} else {
-				DrawText("You Won!", WIDTH/7, HEIGHT/3, 81, WHITE);
+				DrawText("You Won!", WIDTH/7, HEIGHT/3, 81, Colors.WHITE);
 			}
 		}
 

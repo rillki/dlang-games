@@ -250,12 +250,12 @@ void main() {
 		//	draw to screen
 		BeginDrawing();
 		ClearBackground(Color( 204, 204, 255, 255 ));
-		DrawTexture(tbackground, 0, 0, WHITE);
+		DrawTexture(tbackground, 0, 0, Colors.WHITE);
 
 		for(int i = 0; i < tetromino.matrix.length; i++) {
 			for(int j = 0; j < tetromino.matrix[i].length; j++) {
 				if(tetromino.matrix[i][j]) {
-					DrawTexture(ttetrominoMatrix, (tetromino.x+j)*BLOCK_SIZE, (tetromino.y+i)*BLOCK_SIZE, WHITE);
+					DrawTexture(ttetrominoMatrix, (tetromino.x+j)*BLOCK_SIZE, (tetromino.y+i)*BLOCK_SIZE, Colors.WHITE);
 				}
 			}
 		}
@@ -263,7 +263,7 @@ void main() {
 		for(int i = 0; i < board.length; i++) {
 			for(int j = 0; j < board[i].length; j++) {
 				if(board[i][j]) {
-					DrawTexture(ttetromino, j*BLOCK_SIZE, i*BLOCK_SIZE, WHITE);
+					DrawTexture(ttetromino, j*BLOCK_SIZE, i*BLOCK_SIZE, Colors.WHITE);
 				}
 			}
 		}
@@ -274,12 +274,12 @@ void main() {
 			DrawRectangleRec(rmuteScreen, Color(0, 0, 0, 180));
 
 			if(gameOver) {
-				DrawText("Game over!", WIDTH/10, HEIGHT/3, 48, WHITE);
+				DrawText("Game over!", WIDTH/10, HEIGHT/3, 48, Colors.WHITE);
 			} else {
-				DrawText("Welcome!", (WIDTH/3.5).to!int, HEIGHT/7, 32, WHITE);
-				DrawText("Arrow keys - to move around", WIDTH/10, HEIGHT*2/7, 19, WHITE);
-				DrawText("Space - to rotate", (WIDTH/4.5).to!int, HEIGHT*3/7, 20, WHITE);
-				DrawText("P - to pause or play!", (WIDTH/5.7).to!int, HEIGHT*4/7, 20, WHITE);
+				DrawText("Welcome!", (WIDTH/3.5).to!int, HEIGHT/7, 32, Colors.WHITE);
+				DrawText("Arrow keys - to move around", WIDTH/10, HEIGHT*2/7, 19, Colors.WHITE);
+				DrawText("Space - to rotate", (WIDTH/4.5).to!int, HEIGHT*3/7, 20, Colors.WHITE);
+				DrawText("P - to pause or play!", (WIDTH/5.7).to!int, HEIGHT*4/7, 20, Colors.WHITE);
 			}
 		}
 

@@ -173,25 +173,25 @@ class Play {
 
     private void render() {
 		BeginDrawing();
-		ClearBackground(BLACK);
-		DrawTexture(tbackground, 0, 0, WHITE);
+		ClearBackground(Colors.BLACK);
+		DrawTexture(tbackground, 0, 0, Colors.WHITE);
 		DrawFPS(WIDTH/2-40, 10);
 
 		if(shp.estate != EntityState.DESTROYED) {
-			DrawTextureEx(shp.tex, shp.pos, shp_rotation, 1.0, WHITE);
+			DrawTextureEx(shp.tex, shp.pos, shp_rotation, 1.0, Colors.WHITE);
 		}
 
 		pship.render();
         enemySystem.render();
 
-		DrawTexture(thp, 5, 20, WHITE);
-        DrawText(toStringz(lives.to!string), 45, 10, 60, WHITE);
-        DrawText(toStringz(score.to!string), 5, 70, 30, WHITE);
+		DrawTexture(thp, 5, 20, Colors.WHITE);
+        DrawText(toStringz(lives.to!string), 45, 10, 60, Colors.WHITE);
+        DrawText(toStringz(score.to!string), 5, 70, 30, Colors.WHITE);
 
         if(gameOver) {
         	DrawRectangleRec(Rectangle(0, 0, tbackground.width, tbackground.height), Color(0, 0, 0, 180));
-        	DrawText("Game Over!", (tbackground.width/3.4).to!int, (tbackground.height/3.2).to!int, 81, WHITE);
-			DrawText(toStringz("Score: " ~ to!string(score)), (tbackground.width/3.4).to!int, (tbackground.height/5*3).to!int, 81, WHITE);
+        	DrawText("Game Over!", (tbackground.width/3.4).to!int, (tbackground.height/3.2).to!int, 81, Colors.WHITE);
+			DrawText(toStringz("Score: " ~ to!string(score)), (tbackground.width/3.4).to!int, (tbackground.height/5*3).to!int, 81, Colors.WHITE);
         }
 
 		EndDrawing();
