@@ -91,7 +91,7 @@ void main() {
 		Vector2 mousePos = GetMousePosition();
 
 		//	if left mouse button is pressed, the hidden cell is revealed
-		if(IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON)) {
+		if(IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_LEFT)) {
 			int getOut = false;
 			for(int i = 0; i < playerGrid.length; i++) {
 				for(int j = 0; j < playerGrid[i].length; j++) {
@@ -114,7 +114,7 @@ void main() {
 					break;
 				}
 			}
-		} else if(IsMouseButtonPressed(MouseButton.MOUSE_RIGHT_BUTTON)) {	//	player should be able to flag his guess on where the mine is located
+		} else if(IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_RIGHT)) {	//	player should be able to flag his guess on where the mine is located
 			int getOut = false;
 			for(int i = 0; i < playerGrid.length; i++) {
 				for(int j = 0; j < playerGrid[i].length; j++) {

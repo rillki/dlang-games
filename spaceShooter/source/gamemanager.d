@@ -84,7 +84,7 @@ class gameManager {
 			rmenuSelector.y = textPos.y;
 		} else if(IsKeyPressed(KeyboardKey.KEY_DOWN)) {			// move menu selector down
 			rmenuSelector.y = textPos.y*2.3 - (rmenuSelector.height - 81);
-		} else if(IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON) || IsMouseButtonPressed(MouseButton.MOUSE_RIGHT_BUTTON)) {
+		} else if(IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_LEFT) || IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_RIGHT)) {
 			if(mousePos.y > textPos.y && mousePos.y < textPos.y + 81) {
 				gstate = GameState.PLAY;			// if main menu -> "play" was pressed
 			} else if(mousePos.y > textPos.y*2.3 && mousePos.y < textPos.y*2.3 + 81) {

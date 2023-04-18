@@ -144,8 +144,8 @@ void main() {
 		}
 
 		//	process events
-		if(IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON) ||
-			IsMouseButtonPressed(MouseButton.MOUSE_RIGHT_BUTTON)) {
+		if(IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_LEFT) ||
+			IsMouseButtonPressed(MouseButton.MOUSE_BUTTON_RIGHT)) {
 			mouseButtonPressed = true;
 		}
 
